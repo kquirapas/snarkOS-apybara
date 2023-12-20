@@ -71,9 +71,13 @@ impl<N: Network, C: ConsensusStorage<N>, R: Routing<N>> Rest<N, C, R> {
     }
 
     // GET /testnet3/committee/{height}
-    pub(crate) async fn get_committee_for_height(State(rest): State<Self>,Path(height): Path<String>) -> Result<ErasedJson, RestError> {
+    pub(crate) async fn get_committee_for_height(
+        State(rest): State<Self>,
+        Path(height): Path<String>,
+    ) -> Result<ErasedJson, RestError> {
         let height = height.parse::<u32>();
-        let block = rest.ledger.get_committee(height.expect("invalid input, it is neither a block height nor a block hash"))?;
+        let block =
+            rest.ledger.get_committee(height.expect("invalid input, it is neither a block height nor a block hash"))?;
         Ok(ErasedJson::pretty(block))
     }
 
@@ -147,9 +151,10 @@ impl<N: Network, C: ConsensusStorage<N>, R: Routing<N>> Rest<N, C, R> {
                 }
             }
         }
-    
+
         Ok(ErasedJson::pretty(blocks_and_committees))
     }
+
     // GET /testnet3/blocks/committees?start={start_height}&end={end_height}
     pub(crate) async fn get_blocks_committees(
         State(rest): State<Self>,
@@ -174,16 +179,16 @@ impl<N: Network, C: ConsensusStorage<N>, R: Routing<N>> Rest<N, C, R> {
         }
 
         let blocks_and_committees = cfg_into_iter!((start_height..end_height))
-        .filter_map(|height| {
-            let block = rest.ledger.get_block(height);
-            let committee = rest.ledger.get_committee(height);
-            match (block, committee) {
-                (Ok(block), Ok(committee)) => Some((block, committee)),
-                _ => None
-            }
-        })
-        .collect::<Vec<_>>();
-    
+            .filter_map(|height| {
+                let block = rest.ledger.get_block(height);
+                let committee = rest.ledger.get_committee(height);
+                match (block, committee) {
+                    (Ok(block), Ok(committee)) => Some((block, committee)),
+                    _ => None,
+                }
+            })
+            .collect::<Vec<_>>();
+
         Ok(ErasedJson::pretty(blocks_and_committees))
     }
 
@@ -289,6 +294,28 @@ impl<N: Network, C: ConsensusStorage<N>, R: Routing<N>> Rest<N, C, R> {
         Path(id): Path<ProgramID<N>>,
     ) -> Result<ErasedJson, RestError> {
         Ok(ErasedJson::pretty(rest.ledger.vm().finalize_store().get_mapping_names_confirmed(&id)?))
+    }
+
+    // GET /testnet3/program/{programID}/mapping/{mappingName}/values
+    // GET /testnet3/program/{programID}/mapping/{mappingName}/values?metadata={true}
+    pub(crate) async fn get_mapping_values(
+        State(rest): State<Self>,
+        Path((id, name)): Path<(ProgramID<N>, Identifier<N>)>,
+        metadata: Option<Query<Metadata>>,
+    ) -> Result<ErasedJson, RestError> {
+        // Retrieve the mapping values.
+        let mapping_values = rest.ledger.vm().finalize_store().get_mapping_confirmed(id, name)?;
+
+        // Check if metadata is requested and return the values with metadata if so.
+        if metadata.map(|q| q.metadata).unwrap_or(false) {
+            return Ok(ErasedJson::pretty(json!({
+                "data": mapping_values,
+                "height": rest.ledger.latest_height(),
+            })));
+        }
+
+        // Return the values without metadata.
+        Ok(ErasedJson::pretty(mapping_values))
     }
 
     // GET /testnet3/program/{programID}/mapping/{mappingName}/{mappingKey}
