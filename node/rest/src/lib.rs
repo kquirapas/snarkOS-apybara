@@ -111,8 +111,8 @@ impl<N: Network, C: ConsensusStorage<N>, R: Routing<N>> Rest<N, C, R> {
         let governor_config = Box::new(
             GovernorConfigBuilder::default()
                 .per_second(1)
-                .burst_size(rest_rps)
                 .error_handler(|error| Response::new(error.to_string()))
+                .burst_size(10000)
                 .finish()
                 .expect("Couldn't set up rate limiting for the REST server!"),
         );
