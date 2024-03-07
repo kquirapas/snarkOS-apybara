@@ -83,6 +83,7 @@ impl<N: Network, C: ConsensusStorage<N>> Validator<N, C> {
         genesis: Block<N>,
         cdn: Option<String>,
         storage_mode: StorageMode,
+        force_end_height: Option<u32>,
     ) -> Result<Self> {
         // Prepare the shutdown flag.
         let shutdown: Arc<AtomicBool> = Default::default();
@@ -98,7 +99,7 @@ impl<N: Network, C: ConsensusStorage<N>> Validator<N, C> {
         if let Some(base_url) = cdn {
             // Sync the ledger with the CDN.
             if let Err((_, error)) =
-                snarkos_node_cdn::sync_ledger_with_cdn(&base_url, ledger.clone(), shutdown.clone()).await
+                snarkos_node_cdn::sync_ledger_with_cdn(&base_url, ledger.clone(), shutdown.clone(),force_end_height ).await
             {
                 crate::log_clean_error(&storage_mode);
                 return Err(error);
@@ -496,6 +497,7 @@ mod tests {
             genesis,
             None,
             storage_mode,
+            None,
         )
         .await
         .unwrap();

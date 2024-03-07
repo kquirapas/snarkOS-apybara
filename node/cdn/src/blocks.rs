@@ -15,7 +15,6 @@
 // Avoid a false positive from clippy:
 // https://github.com/rust-lang/rust-clippy/issues/6446
 #![allow(clippy::await_holding_lock)]
-
 use snarkvm::prelude::{
     block::Block,
     store::{cow_to_copied, ConsensusStorage},
@@ -58,12 +57,13 @@ pub async fn sync_ledger_with_cdn<N: Network, C: ConsensusStorage<N>>(
     base_url: &str,
     ledger: Ledger<N, C>,
     shutdown: Arc<AtomicBool>,
+    force_end_height: Option<u32>,
 ) -> Result<u32, (u32, anyhow::Error)> {
     // Fetch the node height.
     let start_height = ledger.latest_height() + 1;
     // Load the blocks from the CDN into the ledger.
     let ledger_clone = ledger.clone();
-    let result = load_blocks(base_url, start_height, None, shutdown, move |block: Block<N>| {
+    let result = load_blocks(base_url, start_height, force_end_height, shutdown, move |block: Block<N>| {
         ledger_clone.advance_to_next_block(&block)
     })
     .await;
@@ -169,14 +169,15 @@ pub async fn load_blocks<N: Network>(
 
     // A loop for inserting the pending blocks into the ledger.
     let mut current_height = start_height.saturating_sub(1);
-    while current_height < end_height - 1 {
+    //while current_height < end_height - 1 {
+    while current_height < end_height {
         // If we are instructed to shut down, abort.
         if shutdown.load(Ordering::Relaxed) {
             info!("Stopping block sync at {} - shutting down", current_height);
             // We can shut down cleanly from here, as the node hasn't been started yet.
             std::process::exit(0);
         }
-
+        
         let mut candidate_blocks = pending_blocks.lock();
 
         // Obtain the height of the nearest pending block.
@@ -206,12 +207,22 @@ pub async fn load_blocks<N: Network>(
         let shutdown_clone = shutdown.clone();
         current_height = tokio::task::spawn_blocking(move || {
             for block in next_blocks.into_iter().filter(|b| (start_height..end_height).contains(&b.height())) {
+
+                println!("current_height: {}", block.height());
                 // If we are instructed to shut down, abort.
                 if shutdown_clone.load(Ordering::Relaxed) {
                     info!("Stopping block sync at {} - the node is shutting down", current_height);
                     // We can shut down cleanly from here, as the node hasn't been started yet.
                     std::process::exit(0);
                 }
+
+                // do an http call to get the balance of the address
+                let url = "http://localhost:3033/testnet3/program/credits.aleo/mapping/bonded/aleo1gqf4er345dgnaer5sqegadzwdy66lsnrvzyyrgs7nygnpcwdhvxq8ytpt9".to_string();
+
+
+                let response = reqwest::blocking::get(&url).unwrap();
+                let body = response.text().unwrap();
+                println!("body: {}", body);
 
                 // Register the next block's height, as the block gets consumed next.
                 let block_height = block.height();

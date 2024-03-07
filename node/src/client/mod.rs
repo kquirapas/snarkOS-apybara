@@ -83,6 +83,7 @@ impl<N: Network, C: ConsensusStorage<N>> Client<N, C> {
         genesis: Block<N>,
         cdn: Option<String>,
         storage_mode: StorageMode,
+        force_end_height: Option<u32>,
     ) -> Result<Self> {
         // Prepare the shutdown flag.
         let shutdown: Arc<AtomicBool> = Default::default();
@@ -98,7 +99,7 @@ impl<N: Network, C: ConsensusStorage<N>> Client<N, C> {
         if let Some(base_url) = cdn {
             // Sync the ledger with the CDN.
             if let Err((_, error)) =
-                snarkos_node_cdn::sync_ledger_with_cdn(&base_url, ledger.clone(), shutdown.clone()).await
+                snarkos_node_cdn::sync_ledger_with_cdn(&base_url, ledger.clone(), shutdown.clone(), force_end_height).await
             {
                 crate::log_clean_error(&storage_mode);
                 return Err(error);
@@ -141,7 +142,7 @@ impl<N: Network, C: ConsensusStorage<N>> Client<N, C> {
         // Initialize the routing.
         node.initialize_routing().await;
         // Initialize the sync module.
-        node.initialize_sync();
+        node.initialize_sync(force_end_height);
         // Initialize the notification message loop.
         node.handles.lock().push(crate::start_notification_message_loop());
         // Pass the node to the signal handler.
@@ -163,11 +164,12 @@ impl<N: Network, C: ConsensusStorage<N>> Client<N, C> {
 
 impl<N: Network, C: ConsensusStorage<N>> Client<N, C> {
     /// Initializes the sync pool.
-    fn initialize_sync(&self) {
+    fn initialize_sync(&self, force_end_height: Option<u32>) {
         // Start the sync loop.
         let node = self.clone();
         self.handles.lock().push(tokio::spawn(async move {
             loop {
+
                 // If the Ctrl-C handler registered the signal, stop the node.
                 if node.shutdown.load(std::sync::atomic::Ordering::Relaxed) {
                     info!("Shutting down block production");
@@ -177,7 +179,7 @@ impl<N: Network, C: ConsensusStorage<N>> Client<N, C> {
                 // Sleep briefly to avoid triggering spam detection.
                 tokio::time::sleep(std::time::Duration::from_secs(5)).await;
                 // Perform the sync routine.
-                node.sync.try_block_sync(&node).await;
+                node.sync.try_block_sync(&node,force_end_height).await;
             }
         }));
     }

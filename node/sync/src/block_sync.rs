@@ -212,7 +212,7 @@ impl<N: Network> BlockSync<N> {
 
     /// Performs one iteration of the block sync.
     #[inline]
-    pub async fn try_block_sync<C: CommunicationService>(&self, communication: &C) {
+    pub async fn try_block_sync<C: CommunicationService>(&self, communication: &C, force_end_height: Option<u32>) {
         // Prepare the block requests, if any.
         // In the process, we update the state of `is_block_synced` for the sync module.
         let block_requests = self.prepare_block_requests();
@@ -234,6 +234,15 @@ impl<N: Network> BlockSync<N> {
 
         // Process the block requests.
         'outer: for (height, (hash, previous_hash, sync_ips)) in block_requests {
+
+            // if the force_end_height is same as height, then just break out of the loop
+            if let Some(force_end_height) = force_end_height {
+                if height == force_end_height {
+                    println!("Force end height reached");
+                    break 'outer;
+                }
+            }
+
             // Insert the block request into the sync pool.
             if let Err(error) = self.insert_block_request(height, (hash, previous_hash, sync_ips.clone())) {
                 warn!("Block sync failed - {error}");

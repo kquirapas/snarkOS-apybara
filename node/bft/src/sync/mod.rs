@@ -53,6 +53,8 @@ pub struct Sync<N: Network> {
     handles: Arc<Mutex<Vec<JoinHandle<()>>>>,
     /// The sync lock.
     lock: Arc<TMutex<()>>,
+
+    force_end_height: Option<u32>,
 }
 
 impl<N: Network> Sync<N> {
@@ -70,6 +72,7 @@ impl<N: Network> Sync<N> {
             bft_sender: Default::default(),
             handles: Default::default(),
             lock: Default::default(),
+            force_end_height: None,
         }
     }
 
@@ -89,6 +92,7 @@ impl<N: Network> Sync<N> {
 
         // Start the block sync loop.
         let self_ = self.clone();
+        let force_end_height = self.force_end_height;
         self.handles.lock().push(tokio::spawn(async move {
             loop {
                 // Sleep briefly to avoid triggering spam detection.
@@ -96,7 +100,7 @@ impl<N: Network> Sync<N> {
                 // Perform the sync routine.
                 let communication = &self_.gateway;
                 // let communication = &node.router;
-                self_.block_sync.try_block_sync(communication).await;
+                self_.block_sync.try_block_sync(communication, force_end_height).await;
             }
         }));
 

@@ -50,6 +50,7 @@ impl<N: Network> Node<N> {
         genesis: Block<N>,
         cdn: Option<String>,
         storage_mode: StorageMode,
+        force_end_height: Option<u32>,
     ) -> Result<Self> {
         Ok(Self::Validator(Arc::new(
             Validator::new(
@@ -63,6 +64,7 @@ impl<N: Network> Node<N> {
                 genesis,
                 cdn,
                 storage_mode,
+                force_end_height,
             )
             .await?,
         )))
@@ -89,9 +91,10 @@ impl<N: Network> Node<N> {
         genesis: Block<N>,
         cdn: Option<String>,
         storage_mode: StorageMode,
+        force_end_height: Option<u32>,
     ) -> Result<Self> {
         Ok(Self::Client(Arc::new(
-            Client::new(node_ip, rest_ip, rest_rps, account, trusted_peers, genesis, cdn, storage_mode).await?,
+            Client::new(node_ip, rest_ip, rest_rps, account, trusted_peers, genesis, cdn, storage_mode,force_end_height).await?,
         )))
     }
 
