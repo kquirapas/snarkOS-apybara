@@ -189,6 +189,10 @@ impl<N: Network, C: ConsensusStorage<N>, R: Routing<N>> Rest<N, C, R> {
             .route("/testnet3/stateRoot/latest", get(Self::get_state_root_latest))
             .route("/testnet3/committee/latest", get(Self::get_committee_latest))
 
+            // GET bonded values per block height
+            // @dev key here is the user {address}
+            .route("/testnet3/program/credits.aleo/bonded/:key/:height",get(Self::get_bonded_value))
+
             // Pass in `Rest` to make things convenient.
             .with_state(self.clone())
             // Enable tower-http tracing.

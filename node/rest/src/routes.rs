@@ -461,4 +461,31 @@ impl<N: Network, C: ConsensusStorage<N>, R: Routing<N>> Rest<N, C, R> {
 
         Ok(ErasedJson::pretty(commitment))
     }
+
+    // GET /testnet3/program/credits.aleo/bonded/{address}/{block_height}
+    pub(crate) async fn get_bonded_value(
+        State(rest): State<Self>,
+        Path((key, height)): Path<(Plaintext<N>, String)>
+    ) -> Result<ErasedJson, RestError> {
+        let committee = if let Ok(h) = height.parse::<u32>() {
+            rest.ledger.get_committee(h)?
+        } else {
+            return Err(RestError("Invalid block_height input".to_string()));
+        };
+
+        if let Some(comm) = committee {
+            let bonded_balances: Vec<_> = comm
+            .members()
+            .iter()
+            .map(|(address, (amount, _))| (*address, (*address, *address, *amount)))
+            .collect();
+
+            // TODO: filter bonded_balances with {key}
+            
+            // Return the value without metadata.
+            return Ok(ErasedJson::pretty(bonded_balances))
+        } 
+
+        Err(RestError("Invalid block_height input".to_string()))
+    }
 }

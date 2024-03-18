@@ -1,0 +1,311 @@
+{
+  "block_hash": "ab1lxasapz3n48gam5pyqgk7s79sfr84r2nfjdjs7lehnynq88n2yfqyyxkup",
+  "previous_hash": "ab13yej9890c5pvcht9fgt5d3r2z3cw99j2te542cs34pcemm6zjcpq0sw627",
+  "header": {
+    "previous_state_root": "sr1q89hl9y4lmzpxpq5xcgpm08dx6ey8mgktf9v66tfwvvrdrt4xsqspu2zqa",
+    "transactions_root": "517494953301775306183435598581209333771978224347559716829514168048414431963field",
+    "finalize_root": "5004328239952481916254776115151982134787731210222913885206673315663724383893field",
+    "ratifications_root": "7532409065868596203481730667141748571952502785679768186289509218941529209204field",
+    "solutions_root": "0field",
+    "subdag_root": "7481412718367469002438924213965310085121838629930215091978826602281253775358field",
+    "metadata": {
+      "network": 3,
+      "round": 16,
+      "height": 8,
+      "cumulative_weight": 0,
+      "cumulative_proof_target": 0,
+      "coinbase_target": 4294967295,
+      "proof_target": 33554432,
+      "last_coinbase_target": 4294967295,
+      "last_coinbase_timestamp": 1696118400,
+      "timestamp": 1710696865
+    }
+  },
+  "authority": {
+    "type": "quorum",
+    "subdag": {
+      "subdag": {
+        "14": [
+          {
+            "batch_header": {
+              "version": 2,
+              "batch_id": "1263579298472830568353577791586155826874150942754894766097391399904488798148field",
+              "author": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+              "round": 14,
+              "timestamp": 1710696861,
+              "transmission_ids": [
+                "at14efv4dpzs3hyx2t4qatxaxpat606pvzd5k24sv7k6uvpda266sxqg07h9s",
+                "at106j99e5eemkhwqn3pua6rc9mu5et642p8dtrhksq93888dzctv9snvva8f"
+              ],
+              "previous_certificate_ids": [
+                "7360809408613698613485411214814300100019551091267852662343963217938522103708field",
+                "3890761289956989614727263273218709788886600339872875595562180769210848974207field",
+                "1008934948643852464717238771379802485789596037225022799729326425453268839113field"
+              ],
+              "last_election_certificate_ids": [
+                "1775618471059965536180866700236703546044262553556646860332298625779116675915field",
+                "2844876488383867145433277323428750868685543109464924380763618619302203446642field",
+                "5791449315416681971241773040469916141253519665013346649830027314612480666611field"
+              ],
+              "signature": "sign1jvv7pcwj4tcphv6k4dwmcx6relp3w6hkkket8w7un9s9xdqqy5qyk7ld97h60y5q0sfapz7mgx2sr5kda9ngzpkf6qqp6vxw3nfmcq5r22qjwn4zc0pzv87twjygsz9m7ekljmuw4jpzf68rwuq99r0tp735vs6220q7tp60nr7llkwstcvu49wdhydx5x2s3sftjskzawhqvgmfvfe"
+            },
+            "signatures": [
+              "sign18pta2f7yyypmq2c2nmvp0vs7hx8jx3tywddxw9j2z7kcehwswqq3kavsnxjyj5dm94s224uqmhnq4esr53l32pdw4uv4frndt9s9spr2f956zw5nngjqaptf0p9x3tj383l3njave42ewe5wfeh0zm7wqljhtv2tdf8tqxpthxyecf282va7t5tg7rd4tq6p6d3klf9gczlpz5l030n",
+              "sign1p62gkl8r763unuwh720j5534e45s2dg66u8jzpj90nqhphdemgqvup4nwfgpsc0pkufrt0unf86ajllpenhzkhk3klykzgvkp06cwqkct3ezathx9ekv2xz0at8guyccptdtxdkc8e0zfqxvcya9qmx2qx6nf95qxdauf24nqu74ey2af280m6xgm200c5jqh8pefdxewv7qqfjsk4f"
+            ]
+          },
+          {
+            "batch_header": {
+              "version": 2,
+              "batch_id": "3491030938653509104022376189286265898604890343778360144260879070887075777107field",
+              "author": "aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t",
+              "round": 14,
+              "timestamp": 1710696862,
+              "transmission_ids": [
+                "at106j99e5eemkhwqn3pua6rc9mu5et642p8dtrhksq93888dzctv9snvva8f"
+              ],
+              "previous_certificate_ids": [
+                "3890761289956989614727263273218709788886600339872875595562180769210848974207field",
+                "7360809408613698613485411214814300100019551091267852662343963217938522103708field",
+                "1008934948643852464717238771379802485789596037225022799729326425453268839113field"
+              ],
+              "last_election_certificate_ids": [
+                "3890761289956989614727263273218709788886600339872875595562180769210848974207field",
+                "7360809408613698613485411214814300100019551091267852662343963217938522103708field"
+              ],
+              "signature": "sign1jzpfqnp9hfqgjgsu3zuu7xexmsd7gzdu47npnhuv3a5pjmj7vypqu5vhkcs8dcqx95az8pc72j2qxu705gexvrfkrze765s8zt3wuq7ct3ezathx9ekv2xz0at8guyccptdtxdkc8e0zfqxvcya9qmx2qx6nf95qxdauf24nqu74ey2af280m6xgm200c5jqh8pefdxewv7qqqhqm08"
+            },
+            "signatures": [
+              "sign1q0yw6yn0jrxrrn6gmhtykfyjecku82a9wgp9xy48fvkjucr2lcpap4xwfg8g8glccwkrzhlftvl67zn9rl506x2mnwtgdtg29ds7uqp6phtygkd88eg6ujl3eu8ne4fgjnfcvqzfq25k9xtulvrj83sjqrxq5u4yt86357pxjzgvz7dtpuq4djz2th40428huvzza03r2jsqxp883uc",
+              "sign1wwsza4ftfwlyg6nyr836a5lzk2e397ek2ggtlvr8ngk2z5y80qp6x8vpr8trjg9peje7659dwy9qvya499a8ycx8lnh4evn3kujmjqm2f956zw5nngjqaptf0p9x3tj383l3njave42ewe5wfeh0zm7wqljhtv2tdf8tqxpthxyecf282va7t5tg7rd4tq6p6d3klf9gczlpz5xvwrj"
+            ]
+          }
+        ],
+        "15": [
+          {
+            "batch_header": {
+              "version": 2,
+              "batch_id": "984216786266031233494457134213086219694188476531000266577406039559618479329field",
+              "author": "aleo1ashyu96tjwe63u0gtnnv8z5lhapdu4l5pjsl2kha7fv7hvz2eqxs5dz0rg",
+              "round": 15,
+              "timestamp": 1710696862,
+              "transmission_ids": [
+                "at106j99e5eemkhwqn3pua6rc9mu5et642p8dtrhksq93888dzctv9snvva8f"
+              ],
+              "previous_certificate_ids": [
+                "1263579298472830568353577791586155826874150942754894766097391399904488798148field",
+                "3491030938653509104022376189286265898604890343778360144260879070887075777107field",
+                "6074464633439032414433317750662902106403761981741933318527467837872447924453field"
+              ],
+              "last_election_certificate_ids": [
+                "3890761289956989614727263273218709788886600339872875595562180769210848974207field",
+                "1008934948643852464717238771379802485789596037225022799729326425453268839113field"
+              ],
+              "signature": "sign1y5hv9kjemlwee2pcgsse9wt9mcjans7awxcdq4zkc9q3u2lr6gq9yxa339wwfw3pmptmnzmsfw8w7mpu8hucytsvvv5whxz0htpj5qf6phtygkd88eg6ujl3eu8ne4fgjnfcvqzfq25k9xtulvrj83sjqrxq5u4yt86357pxjzgvz7dtpuq4djz2th40428huvzza03r2jsqxwf02ca"
+            },
+            "signatures": [
+              "sign120ngd5qxx2gm8uakn3u3udw35pcupwhadxxljsru8usfyyu03yqsn92a2t467h2837xkj2rtxywnpdh8s948rw7jl03cgh6w9mqsuqn2f956zw5nngjqaptf0p9x3tj383l3njave42ewe5wfeh0zm7wqljhtv2tdf8tqxpthxyecf282va7t5tg7rd4tq6p6d3klf9gczlpzccl8ge",
+              "sign1n9ldjuynu3wvuaa6umq4drv578uptefghyqmz0zgc97faamresqmajgz49gpdgn2ps7hlne8av86rjydly9cc4u7lpd037q7c5s2zqxct3ezathx9ekv2xz0at8guyccptdtxdkc8e0zfqxvcya9qmx2qx6nf95qxdauf24nqu74ey2af280m6xgm200c5jqh8pefdxewv7qqfmkygt"
+            ]
+          },
+          {
+            "batch_header": {
+              "version": 2,
+              "batch_id": "926550750199930956486829189489069694248695889793668458244671302019574378786field",
+              "author": "aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t",
+              "round": 15,
+              "timestamp": 1710696865,
+              "transmission_ids": [
+                "at10ujrkq5yqr623vlkmrc2nunch5ykl3n3cpglnx35emwej5se2q9q4lf6fy"
+              ],
+              "previous_certificate_ids": [
+                "1263579298472830568353577791586155826874150942754894766097391399904488798148field",
+                "3491030938653509104022376189286265898604890343778360144260879070887075777107field",
+                "6074464633439032414433317750662902106403761981741933318527467837872447924453field"
+              ],
+              "last_election_certificate_ids": [
+                "3890761289956989614727263273218709788886600339872875595562180769210848974207field",
+                "7360809408613698613485411214814300100019551091267852662343963217938522103708field"
+              ],
+              "signature": "sign1fe2dugj2cgmmaj8gdnt344lh6gud8kdjanusczrejqdwl03xlvq4rmf3jf9ju2n5j9rnpzrd8zf8d4ad2dm5pfqeh4y9fdmwssd5gqkct3ezathx9ekv2xz0at8guyccptdtxdkc8e0zfqxvcya9qmx2qx6nf95qxdauf24nqu74ey2af280m6xgm200c5jqh8pefdxewv7qqlt0jd5"
+            },
+            "signatures": [
+              "sign1yjc8ffpke9wdmku79x3652fffu7px588y7qhathgh7uc5vfzt5pjmp34h20ym9qjx5d5v5wxzjkgqywm853dm747mm4gys5h8u3rcpp6phtygkd88eg6ujl3eu8ne4fgjnfcvqzfq25k9xtulvrj83sjqrxq5u4yt86357pxjzgvz7dtpuq4djz2th40428huvzza03r2jsqxr37c4j",
+              "sign1k0wlu0h9wrea52rs4zereydat256ne5tdde0mqtjfsqcmg68wcpg72ju3kduqud5aeuhm8r3sr27vl04uqzenj8rfazvxy4rptmhwqm2f956zw5nngjqaptf0p9x3tj383l3njave42ewe5wfeh0zm7wqljhtv2tdf8tqxpthxyecf282va7t5tg7rd4tq6p6d3klf9gczlpz2z6qhc"
+            ]
+          },
+          {
+            "batch_header": {
+              "version": 2,
+              "batch_id": "7727052242592843668186512036609658276417582064861231150522080387757239753956field",
+              "author": "aleo12ux3gdauck0v60westgcpqj7v8rrcr3v346e4jtq04q7kkt22czsh808v2",
+              "round": 15,
+              "timestamp": 1710696865,
+              "transmission_ids": [
+                "at10ujrkq5yqr623vlkmrc2nunch5ykl3n3cpglnx35emwej5se2q9q4lf6fy"
+              ],
+              "previous_certificate_ids": [
+                "1263579298472830568353577791586155826874150942754894766097391399904488798148field",
+                "3491030938653509104022376189286265898604890343778360144260879070887075777107field",
+                "6074464633439032414433317750662902106403761981741933318527467837872447924453field"
+              ],
+              "last_election_certificate_ids": [
+                "7360809408613698613485411214814300100019551091267852662343963217938522103708field",
+                "3890761289956989614727263273218709788886600339872875595562180769210848974207field"
+              ],
+              "signature": "sign12aflca78mye0z0xf6xnqqafhla0wvlxwautv6uxrmup06yggngq6kyq63a3ltqvz8vr37z4c49l04623rmn9t045tzrnstlm5shs7qm2f956zw5nngjqaptf0p9x3tj383l3njave42ewe5wfeh0zm7wqljhtv2tdf8tqxpthxyecf282va7t5tg7rd4tq6p6d3klf9gczlpz3vstkq"
+            },
+            "signatures": [
+              "sign1d86s3pder4pyh8s408zl5pdfw3kzfxq7pfdr3klzhdrtjftluyqurjzg6etgfu8hta5lzu0xphzklahrg8sgqjtxvfe4nmxcjyk3qq7ct3ezathx9ekv2xz0at8guyccptdtxdkc8e0zfqxvcya9qmx2qx6nf95qxdauf24nqu74ey2af280m6xgm200c5jqh8pefdxewv7qqkmumme",
+              "sign1ly7hehhlytzaxw8aprku0st6qd0j9tkrq33sqlnsp2sgjk895sqv6239x9cdtqha65gvkykv4fksaqlrt4na3k0ej9x7wxkmjnwccqf6phtygkd88eg6ujl3eu8ne4fgjnfcvqzfq25k9xtulvrj83sjqrxq5u4yt86357pxjzgvz7dtpuq4djz2th40428huvzza03r2jsqx04wwrh"
+            ]
+          }
+        ],
+        "16": [
+          {
+            "batch_header": {
+              "version": 2,
+              "batch_id": "7816451569351837412204942696926331822093530612538170717254986053214288364448field",
+              "author": "aleo1ashyu96tjwe63u0gtnnv8z5lhapdu4l5pjsl2kha7fv7hvz2eqxs5dz0rg",
+              "round": 16,
+              "timestamp": 1710696865,
+              "transmission_ids": [
+                "at10ujrkq5yqr623vlkmrc2nunch5ykl3n3cpglnx35emwej5se2q9q4lf6fy"
+              ],
+              "previous_certificate_ids": [
+                "984216786266031233494457134213086219694188476531000266577406039559618479329field",
+                "926550750199930956486829189489069694248695889793668458244671302019574378786field",
+                "7727052242592843668186512036609658276417582064861231150522080387757239753956field"
+              ],
+              "last_election_certificate_ids": [
+                "926550750199930956486829189489069694248695889793668458244671302019574378786field",
+                "984216786266031233494457134213086219694188476531000266577406039559618479329field"
+              ],
+              "signature": "sign1lzq0k9qq594amgxfxvjkn4ztuv7x3vr2gv9n8lew96qz8hq43qqj6wwgcxghdc88ltkczfx3tq2pcvl696k6yxkr0lkrt3cspqp3xqp6phtygkd88eg6ujl3eu8ne4fgjnfcvqzfq25k9xtulvrj83sjqrxq5u4yt86357pxjzgvz7dtpuq4djz2th40428huvzza03r2jsqxh63q7v"
+            },
+            "signatures": [
+              "sign10lc94q3kp2smqtj26znqfe8etjwv6746n2mkjmx5wg6qcpp9gvp45t6zm2q3xvzaga7hl99nl4ep5rxx45p2ugjlmtuvc8ry8zyjyqwct3ezathx9ekv2xz0at8guyccptdtxdkc8e0zfqxvcya9qmx2qx6nf95qxdauf24nqu74ey2af280m6xgm200c5jqh8pefdxewv7qq3jhcuq",
+              "sign1zr06n803xlgsgdr4wcra0cqve6dc2p0fner2p39xrqlfyatyw5qnth3vs62w4qff64ljc4qx6ma0gm9dp7teefjyqwwcrwazrzhdqqn2f956zw5nngjqaptf0p9x3tj383l3njave42ewe5wfeh0zm7wqljhtv2tdf8tqxpthxyecf282va7t5tg7rd4tq6p6d3klf9gczlpz2wnv92"
+            ]
+          }
+        ]
+      },
+      "election_certificate_ids": [
+        "1866961377754059223222974275465493508128649633806918145026303231822199616711field",
+        "8093195227091159017154775239934511813079436736998649729879615876050779701513field"
+      ]
+    }
+  },
+  "ratifications": [
+    {
+      "type": "block_reward",
+      "amount": 23792343
+    },
+    {
+      "type": "puzzle_reward",
+      "amount": 0
+    }
+  ],
+  "transactions": [
+    {
+      "status": "accepted",
+      "type": "execute",
+      "index": 0,
+      "transaction": {
+        "type": "execute",
+        "id": "at10ujrkq5yqr623vlkmrc2nunch5ykl3n3cpglnx35emwej5se2q9q4lf6fy",
+        "execution": {
+          "transitions": [
+            {
+              "id": "au17pxlumweaucrv2mv0p8lmmleat22q9kn0akwwlw5k5z044dqt5gqt09l8f",
+              "program": "credits.aleo",
+              "function": "transfer_public",
+              "inputs": [
+                {
+                  "type": "public",
+                  "id": "4935083873988123733746306163032307679694017006374139684521595279610081325743field",
+                  "value": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px"
+                },
+                {
+                  "type": "public",
+                  "id": "3807367953165167068418925756450948471389034335136267048683053037637842122453field",
+                  "value": "1u64"
+                }
+              ],
+              "outputs": [
+                {
+                  "type": "future",
+                  "id": "8311828827792087479332845788910797031052926010772669888483131091557403341199field",
+                  "value": "{\n  program_id: credits.aleo,\n  function_name: transfer_public,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    1u64\n  ]\n}"
+                }
+              ],
+              "tpk": "164495648202908066381406885249363514935528042893748773321630624685642305454group",
+              "tcm": "1287011963662514759993019973861849226475249590361701346609565920515702279597field"
+            }
+          ],
+          "global_state_root": "sr1h4pqv4dfdnaeglrah2qzvn3mngxjjy5z6dyn80ng3ztw4stk0qxse5nldl",
+          "proof": "proof1qyqsqqqqqqqqqqqpqqqqqqqqqqqqx6w5ah0af797x80zyv6svveqa34mpr9hevzxteqywdhg66frmdc5txunh7lmnu5y6gwj5vvg7dgpq872y83x9f34l3930lztu2pcr63yxzsx39psq4cqesvtn2j5w4d9vxl33w2rkxx3zyj45v3pgvzncqvyvvu9j8z8whnfqdnpwafq0mx39v5xwzu8qrz4qgqj3ytk8jeekcg5ejgnxrcwnacedk39ndykcjq0h2drmx9v0rh4fpvsqfr655gn6rzygh6jrmf2g0tq43r0t2ragu5cdspecqvnwhcrdxxxzm44q7sqe63htpngtpdkqxjtgalakq9jyeztvfymgxdc2rh9jq9ehfmly7fyn59ucv0drjjjzmupztm2t5ysq42rsh63h25dduuef64ygacrlcpey5ryx734tx95cw8k6a32w0hs8q6e2cpvwf2df2pjj5g3g7mqsy2jhxtudse75eyex2d4cwgwhqmkge5pecz2yn64u6jfhru6hpf8ye3v74xyfjc7n4ymqgjkqlw5kqrdgkn938sasr2ggwwm356j7cmt36kr486pypxla56v2rznjrv4vgv89an2jlj8kpx3wnffc42fgqqarwcrml4zw2hv6r2jcddp5u5eek5h6q6kyt97z84fp9jwq0wl0d8jdvqudc5ha6usclp8phjzh5uqqdkxns2zaa5c7jxwcmdqpn8aztgcn3grrphk05ym3zvffcdnfqpwef3p0jss75zu86slm7qjl95fe4hn7f6tskh6vnthsytdq7r0wrhe0t9z5vuvmhtfz6spg820444jdlt9xcrmha0mt5lxtcjgw0m9qfcy945rggjprhuzecxavfqs73g53jnf0nkezxqvp9ucvmvgt4cqrmp4x2vcu532d2zt74zvv2yvvt2sm9khe29tlvv22gpgsslgp2ggw9crhd4yy6hvxmgvdqauyqf3zdljn6767vldstdu9wzppxqnkqqjg5n6mek4ddczh7v8wc2d7lqlt78hs34xpx5j9u2dn076px6zcprr7pje6m6te4n7nkjqspnm82rdq2nxt9h03v7rcrkhznaayjf4zqtrnm5edergakd59l3u79qtk0rx6c4rp7m4a09jl2a3uy6qwwzp9ly88dwuz5n6fz3x60qk32z4uauqefcl6hl9gm8qv83vy06slfqsqvqqqqqqqqqqpe4zh5y7at7f6y7lqkhkcvle0phggs6frd8n77fvnr2hwjrwjn5cmg042nv53xa9zhzfe4lluywmqqqyx5cc2xgh0j06up6pmjvd088a5jdmd0yzhraskgt4yxj326n4l0udua7vp8gqqffwm44kxdhm2jypqy2evuszn9u5zy0gm4emay794ujv9dsmz4ewskpawxyvvky4zwuq767gglwvuh3j3t8gjk8swdaxscwhtk6lj4yue6pwsx0wpuhkh6j0l33d0d7czyg5xhzrgsqhtwedqyqqk0emj0"
+        },
+        "fee": {
+          "transition": {
+            "id": "au1ffmda0evresjzp4gmnegjqdp0mxhh2jegvqleyxxs9et3ukx7ursykat0a",
+            "program": "credits.aleo",
+            "function": "fee_public",
+            "inputs": [
+              {
+                "type": "public",
+                "id": "7195750741949294626485372313973330701269331374694061763201098773536066984931field",
+                "value": "263388u64"
+              },
+              {
+                "type": "public",
+                "id": "1671813839018816129297455280251845340160395946267566591619029528066949899846field",
+                "value": "10000u64"
+              },
+              {
+                "type": "public",
+                "id": "1763179069646443356303152446058628840816413887543243083483593399549845161677field",
+                "value": "2820865346483342807744904394745146257847262442529204112665441036722994380380field"
+              }
+            ],
+            "outputs": [
+              {
+                "type": "future",
+                "id": "8000498875917650802107298439126842338829254259812827778074386879763924580467field",
+                "value": "{\n  program_id: credits.aleo,\n  function_name: fee_public,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    273388u64\n  ]\n}"
+              }
+            ],
+            "tpk": "2921228105013288154679504306260405234744851913515780299867454611824688698054group",
+            "tcm": "1315724389211410243891738972661272708908553711132783112122141168324931781356field"
+          },
+          "global_state_root": "sr1h4pqv4dfdnaeglrah2qzvn3mngxjjy5z6dyn80ng3ztw4stk0qxse5nldl",
+          "proof": "proof1qyqsqqqqqqqqqqqpqqqqqqqqqqqgg66y7p9crj40vk20t0qa758q394uu0lms4p70hu2q6gt4gffd8a58zmyt6g3h2rfg6uztrgsx7uqqyrp7hgmq73zac820jf063avcdffe8xfafa5wndy6xrzylnkj5crhrx0vmqqtq4qamrh525td9yvyq9nx6rrwljg6w2gsgyza67g6x32zpny0w38dfkrwqu4ccxpeex0t90wv4ape4lkn4dqzfsfmxpltuq9vmzpwr84rhyjyg800q69rlady9qfhytq3gzqz2gl87xlcrzd03szhe4cxxxgwl32sq202e2vmnqqgpfqg6uq396x6ggxya5negmhud28ay9qmk8ur6g3lqsa3ev8kgseqzvaq734772z08vgptrnh5zcrc0uyyqusnqyfjagm5s2zq8cvs5ttelq6cd5mw4r5pjyt0ftz92aszkx89pw4z26z5u99535nvtuqym72jw4ek3jtaew9d507dh2zwtc879qaaan40s8f3xjz20alluuflralqzrm0zqxcntq5mmw0dj8q9jk0r5n0wmxctdq3anjswt3xx90xmv8eq849erkvlvrcysr3cpqv0hguft37e2e3f66z8pru03duqy8pkcg4dryrpdv8p6drprupeeevg223hsz7s6qqydr7shlm7atl387fv8zgsc7r7jn5r28dsqq0vqmag384vnhcd884scrxeuqzda6ck6zj53pthtdt7x7k3gdfsnyq9tsvherfzj2hu5cd2lu0l47737rux5wslwarre35audg2whenaxpkke8qfek67qhv7lsyvdtvj3xlu8qg6c4mxvgsk5z8qpgd4n6vfprdmrnsperkdj3zczscfjshj53445r4u5c409q4z079glnhsy4astap4dp3ndtht3px2wsrz93t32x2vet5lj643awshkqhlm6u9avsvcz2urzu3rn2kqa5ap7fl65eaejn3ze25jj8wndld28hnqs24sgzeh56cp4clkjrfhyjn2vup6pnjg7ludknlefg2r0v3yx7d03x55z0swtz0nvuczcwvu2zrfpguyh97nwy2a5xkgh93dvlm6wx8cndvqxx55h4fmrxrf5tyg8vaveur2g4hayul3qwvf7wls84trejmdtrs8v6ssgw35hhxpm8w908sz23w48l02p4uf9xq0z4p6gqnylfhr6cvqvqqqqqqqqqqq8evmj24g3yljey580fdz2v7aqnyy8smg3ndcxfc32lsukuzaf8dku7lhmg7ldmpmdtgyzmnxefhqqqzruxz9tz33yhqd855f8dw3ydqq5wy66v6ezc2fznyxtwrsfk72mkt2z8qjlfcl6c50p0kccyj73ypq8t8xdpku3jkz8pskmg37px4vm5jsgz9kyln8lhkdgu8haquj7wsavz64ly2ttg9wg90nqe5mn0cj46xtjv2n0ppx8ze97nh3d59ndev6gyxr29de8ssa7kng7u2k6z2qqqqagllfz"
+        }
+      },
+      "finalize": [
+        {
+          "type": "update_key_value",
+          "mapping_id": "2855157744830843716005407030207142101853521493742120919939436395872133863104field",
+          "index": 0,
+          "key_id": "3735849869114892265786124913473029534128875410754308268945151169665323186552field",
+          "value_id": "4364453071447529664010824078777745641231255386309846732019039728327408081968field"
+        },
+        {
+          "type": "update_key_value",
+          "mapping_id": "2855157744830843716005407030207142101853521493742120919939436395872133863104field",
+          "index": 0,
+          "key_id": "3735849869114892265786124913473029534128875410754308268945151169665323186552field",
+          "value_id": "1891665087377811744479334411450554764480015407479002770960050635488807714306field"
+        },
+        {
+          "type": "update_key_value",
+          "mapping_id": "2855157744830843716005407030207142101853521493742120919939436395872133863104field",
+          "index": 0,
+          "key_id": "3735849869114892265786124913473029534128875410754308268945151169665323186552field",
+          "value_id": "978970543664299502608370757058488338879700497112180647983452378504071827302field"
+        }
+      ]
+    }
+  ],
+  "aborted_transaction_ids": []
+}
